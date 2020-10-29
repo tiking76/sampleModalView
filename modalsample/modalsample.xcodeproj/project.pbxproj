@@ -200,6 +200,7 @@
 				11B614062546BECD00434504 /* Sources */,
 				11B614072546BECD00434504 /* Frameworks */,
 				11B614082546BECD00434504 /* Resources */,
+				642B5E4C324835862AEFC062 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +239,7 @@
 				11B614272546BECE00434504 /* Sources */,
 				11B614282546BECE00434504 /* Frameworks */,
 				11B614292546BECE00434504 /* Resources */,
+				775DFCDBAEAF9DD412ADC7CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,6 +381,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-modalsampleTests/Pods-modalsampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		642B5E4C324835862AEFC062 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-modalsample/Pods-modalsample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-modalsample/Pods-modalsample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-modalsample/Pods-modalsample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		775DFCDBAEAF9DD412ADC7CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-modalsample-modalsampleUITests/Pods-modalsample-modalsampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-modalsample-modalsampleUITests/Pods-modalsample-modalsampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-modalsample-modalsampleUITests/Pods-modalsample-modalsampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89ECCBED96C937006C6CCBA0 /* [CP] Check Pods Manifest.lock */ = {

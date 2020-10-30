@@ -16,24 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="modal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17A-8t-CxH">
-                                <rect key="frame" x="183.5" y="437.5" width="47" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7J-rb-ILR" customClass="RadarChartView" customModule="Charts">
+                                <rect key="frame" x="11" y="83" width="320" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7PY-sf-E6i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="17A-8t-CxH" firstAttribute="centerX" secondItem="pkR-3h-Hxq" secondAttribute="centerX" id="3Gb-U0-MX0"/>
-                            <constraint firstItem="17A-8t-CxH" firstAttribute="centerY" secondItem="pkR-3h-Hxq" secondAttribute="centerY" id="D9K-95-vfL"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="w7J-rb-ILR" id="j6z-bT-59z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoA-V1-Qx4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="124"/>
+            <point key="canvasLocation" x="1107.2463768115942" y="123.88392857142857"/>
         </scene>
     </scenes>
     <resources>

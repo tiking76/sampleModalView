@@ -79,17 +79,28 @@ class ModalViewController: UIViewController, ChartViewDelegate {
         let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double(arc4random_uniform(mult) + min))
         }
         
-        
         let entries1 = (0..<count).map(block)
         let entries2 = (0..<count).map(block)
         
+        print(type(of: entries1))
+        print(type(of: entries1[0]))
+        print(entries1[0])
+        
+        
         let set1 = RadarChartDataSet(entries: entries1, label: "Last Week")
-        set1.setColor(UIColor(red: 103/255, green: 110/255, blue: 129/255, alpha: 1))
-        set1.fillColor = UIColor(red: 103/255, green: 110/255, blue: 129/255, alpha: 1)
+        //枠線
+        set1.setColor(.black)
+        //範囲領域
+        set1.fillColor = .red
+        //塗り潰し
         set1.drawFilledEnabled = true
+        //領域のalpha値
         set1.fillAlpha = 0.7
+        //枠線の太さ
         set1.lineWidth = 2
+        //丸のサークルをクリック時に出すか
         set1.drawHighlightCircleEnabled = true
+        //ポインターに対して座標線みたいなものを出すか
         set1.setDrawHighlightIndicators(false)
         
         let set2 = RadarChartDataSet(entries: entries2, label: "This week")
@@ -103,7 +114,8 @@ class ModalViewController: UIViewController, ChartViewDelegate {
         
         let data = RadarChartData(dataSets: [set1, set2])
         data.setValueFont(.systemFont(ofSize: 8, weight: .light))
-        data.setDrawValues(false)
+        //それぞれの値を表示するかどうか
+        data.setDrawValues(true)
         data.setValueTextColor(.white)
         
         chartView.data = data

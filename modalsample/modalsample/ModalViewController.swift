@@ -24,6 +24,7 @@ class ModalViewController: UIViewController, ChartViewDelegate {
         super.viewDidLoad()
         chartView.delegate = self
         
+        //枠線
         chartView.chartDescription?.enabled = false
         chartView.webLineWidth = 1
         chartView.innerWebLineWidth = 1
@@ -31,6 +32,7 @@ class ModalViewController: UIViewController, ChartViewDelegate {
         chartView.innerWebColor = .yellow
         chartView.webAlpha = 1
         
+        //x軸
         let xAxis = chartView.xAxis
         xAxis.labelFont = .systemFont(ofSize: 9, weight: .light)
         xAxis.xOffset = 0
@@ -38,7 +40,7 @@ class ModalViewController: UIViewController, ChartViewDelegate {
         xAxis.valueFormatter = self
         xAxis.labelTextColor = .white
         
-        
+        //y軸
         let yAxis = chartView.yAxis
         yAxis.labelFont = .systemFont(ofSize: 9, weight: .light)
         yAxis.labelCount = 5
@@ -46,6 +48,7 @@ class ModalViewController: UIViewController, ChartViewDelegate {
         yAxis.axisMaximum = 80
         yAxis.drawLabelsEnabled = false
         
+        //凡例
         let legend = chartView.legend
         legend.horizontalAlignment = .center
         legend.verticalAlignment = .top

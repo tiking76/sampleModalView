@@ -8,7 +8,16 @@
 import UIKit
 
 class SampleCollectionView: UIView {
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            let nib = UINib(nibName: "SampleCollectionViewCell", bundle: nil)
+            collectionView.register(nib, forCellWithReuseIdentifier: "cell")
+            
+        }
+    }
+    
     
     let models = Model.createModel()
     
@@ -17,31 +26,31 @@ class SampleCollectionView: UIView {
         loadNib()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         loadNib()
     }
-    
-    
     
     private func loadNib() {
         if let view = Bundle.main.loadNibNamed("SampleCollectionView", owner: self)?.first as? UIView {
             view.frame = self.bounds
             self.addSubview(view)
+            collectionView.delegate = self
+            collectionView.dataSource = self
             configCollectionView()
         }
     }
     
     private func configCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        collectionView.register(UINib(nibName: "SampleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SampleCollectionViewCell")
-        
         // セルの大きさを設定
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: collectionView.frame.width, height: 100)
         collectionView.collectionViewLayout = layout
+    }
+    
+    func debagPrint() {
+        print("DEBAG:: call this point?")
     }
 }
 
@@ -53,7 +62,7 @@ extension SampleCollectionView : UICollectionViewDelegate {
 
 extension SampleCollectionView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SampleCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
         if let cell = cell as? SampleCollectionViewCell {
             cell.setupCell(model: models[indexPath.row])
